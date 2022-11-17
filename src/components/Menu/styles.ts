@@ -5,7 +5,19 @@ export const Container = styled.div`
  ${({ theme }: ThemeInterface) => css`
    width: 100%;
    background-color: ${theme.colors?.black};
-   height: 20rem;
+   height: 8rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+    }
+  `}
+`
+
+export const Logo = styled.img`
+ ${({ theme }: ThemeInterface) => css`
+   width: auto;
+   height: 4rem;
     }
   `}
 `
