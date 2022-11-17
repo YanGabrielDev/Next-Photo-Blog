@@ -8,8 +8,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Menu/>
         <GlobalStyles />
+        <Menu />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
