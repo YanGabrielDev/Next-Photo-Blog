@@ -7,7 +7,7 @@ export const theme = {
     },
     fonts: {
         family: {
-          default: "'Roboto', sans-serif",
+          default: "'Raleway', sans-serif",
           secondary: "'Montserrat', sans-serif",
         },
         sizes: {
