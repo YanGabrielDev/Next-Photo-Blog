@@ -13,6 +13,7 @@ export const Container = styled.header`
    text-align: center;
    color: white;
    font-family: ${theme.fonts.family?.default};
+   position: fixed;
     }
   `}
 `
@@ -20,13 +21,13 @@ export const Container = styled.header`
 export const Image = styled.img`
  ${({ theme }: ThemeInterface) => css`
    width: auto;
-   height: 4rem;
+   height: 3rem;
     }
   `}
 `
 export const Logo = styled.div`
  ${({ theme }: ThemeInterface) => css`
-   width: 240px;
+   width: 174px;
    height: 9rem;
    display: flex;
    text-align: center;
@@ -62,7 +63,7 @@ export const Social = styled.div`
 
 export const Text = styled.h3`
  ${({ theme }: ThemeInterface) => css`
-   font-size: ${theme.fonts.sizes?.xlarge};
+   font-size: ${theme.fonts.sizes?.large};
     }
   `}
 `
