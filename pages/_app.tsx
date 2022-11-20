@@ -1,16 +1,17 @@
 import type { AppProps } from "next/app"
 import { ThemeProvider } from "styled-components"
-import { Menu } from "../src/components/Menu"
 import { GlobalStyles } from "../src/styles/globalStyles"
 import { theme } from "../src/styles/theme/theme"
+import { Layout } from "../src/components/Layout"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Menu />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   )
