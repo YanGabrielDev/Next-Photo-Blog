@@ -87,6 +87,10 @@ export const LinkMenu = styled(Link)`
    &:hover {
       color: ${theme.colors?.white};
     }
+    &.active{
+    color: ${theme.colors?.white};
+  }
     }
+ 
   `}
 `
