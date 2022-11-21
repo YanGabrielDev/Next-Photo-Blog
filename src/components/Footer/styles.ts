@@ -24,3 +24,8 @@ flex-direction: column;
 height: 6rem;
 `}
 `
+export const Link = styled.a`
+${({theme}: ThemeInterface) => css`
+color: ${theme.colors?.blue};
+`}
+`
