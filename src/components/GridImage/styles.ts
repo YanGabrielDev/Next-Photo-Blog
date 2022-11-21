@@ -9,6 +9,7 @@ export const Grid = styled.div`
   ${({ theme }: ThemeInterface) => css`
     column-count: 4;
     column-gap: 10px;
+
     @media ${theme.media?.lteLarge}{
       column-count: 3;
     column-gap: 10px;
@@ -22,6 +23,7 @@ export const Grid = styled.div`
 export const GridElement = styled.div`
   ${({ theme }) => css`
     overflow: hidden;
+
   `}
 `;
 
@@ -31,5 +33,6 @@ export const Image = styled.img`
     height: auto;
     margin-bottom: 10px;
     border-radius: 10px;
+
   `}
 `;
