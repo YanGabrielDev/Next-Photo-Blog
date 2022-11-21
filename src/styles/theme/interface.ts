@@ -2,9 +2,11 @@ export interface ThemeInterface{
     theme:{
       colors?:{
           black?: string,
+          SoftBlack?: string,
           white?: string,       
           ciano?: string,       
           blue?: string,       
+          gray?: string,       
       }
     
       fonts: {
@@ -25,6 +27,7 @@ export interface ThemeInterface{
       },
       media?: {
         lteMedium?: string,
+        lteLarge?: string,
       },
       spacings?: {
         xsmall?: string,
