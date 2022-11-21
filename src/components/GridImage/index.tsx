@@ -6,9 +6,7 @@ export const GridImage = ({ data, image }: GridImageInterface) => {
       <Styled.Grid>
         {data?.map((image) => (
           <>
-            <div>
-              <img src={image.src.medium} />
-            </div>
+              <Styled.Image src={image.src.large}  />
           </>
         ))}
       </Styled.Grid>
