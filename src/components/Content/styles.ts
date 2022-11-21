@@ -6,6 +6,7 @@ ${({theme}: ThemeInterface) => css`
  margin: 0 auto;
  width: 100%;
  padding-top: 20rem;
+ padding: 0 1rem;
 
 
 `}
