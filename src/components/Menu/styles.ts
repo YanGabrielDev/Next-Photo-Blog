@@ -1,19 +1,31 @@
 import styled, {css} from "styled-components";
 import { ThemeInterface } from "../../styles/theme/interface";
+import Link from "next/link";
+
+export const Menu =  styled.div`
+${({ theme }: ThemeInterface) => css`
+  width: 100%;
+  background-color: ${theme.colors?.black};
+  height: 6rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+   }
+ `}
+`
 
 export const Container = styled.header`
-
  ${({ theme }: ThemeInterface) => css`
    width: 100%;
    background-color: ${theme.colors?.black};
-   height: 9rem;
+   height: 8rem;
    display: flex;
-   justify-content: space-between;
-   align-items: center;
-   text-align: center;
    color: white;
    font-family: ${theme.fonts.family?.default};
    position: fixed;
+   align-items: center;
     }
   `}
 `
@@ -28,7 +40,7 @@ export const Image = styled.img`
 export const Logo = styled.div`
  ${({ theme }: ThemeInterface) => css`
    width: 174px;
-   height: 9rem;
+   height: 3rem;
    display: flex;
    text-align: center;
    align-items: center;
@@ -39,7 +51,7 @@ export const Logo = styled.div`
 export const MenuLink = styled.div`
  ${({ theme }: ThemeInterface) => css`
    width: 340px;
-   height: 9rem;
+   height: 3rem;
    display: flex;
    text-align: center;
    align-items: center;
@@ -51,7 +63,7 @@ export const MenuLink = styled.div`
 export const Social = styled.div`
  ${({ theme }: ThemeInterface) => css`
    width: 240px;
-   height: 9rem;
+   height: 3rem;
    display: flex;
    text-align: center;
    align-items: center;
@@ -64,6 +76,17 @@ export const Social = styled.div`
 export const Text = styled.h3`
  ${({ theme }: ThemeInterface) => css`
    font-size: ${theme.fonts.sizes?.large};
+    }
+  `}
+`
+export const LinkMenu = styled(Link)`
+ ${({ theme }: ThemeInterface) => css`
+   color: ${theme.colors?.gray};
+   cursor: pointer;
+   
+   &:hover {
+      color: ${theme.colors?.white};
+    }
     }
   `}
 `
