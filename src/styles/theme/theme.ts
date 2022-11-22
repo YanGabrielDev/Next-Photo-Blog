@@ -5,7 +5,7 @@ export const theme = {
         white: "#ffffff",
         blue: "#0564fc",
         ciano: "#05aefc",
-        gray: "#737373"
+        gray: "#8c8c8c"
     },
     fonts: {
         family: {
