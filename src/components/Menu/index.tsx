@@ -1,6 +1,7 @@
 import { useState } from "react"
 import * as Styled from "./styles"
 import { useRouter } from "next/router"
+import LinkedinIcon from "../../../Assets/Icons/linkedin"
 export const Menu = () => {
   const router = useRouter()
   return (
@@ -31,7 +32,9 @@ export const Menu = () => {
           </Styled.LinkMenu>
         </Styled.MenuLink>
         <Styled.Social>
-          <h1>ds</h1>
+          <a>
+            <LinkedinIcon height="30" width="30" />
+          </a>
         </Styled.Social>
       </Styled.Menu>
     </Styled.Container>
