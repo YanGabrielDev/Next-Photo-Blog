@@ -50,7 +50,7 @@ export default class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand&family=Raleway:wght@300&family=Roboto:ital,wght@1,100;1,300&family=Ubuntu:wght@700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand&family=Raleway:wght@700&family=Roboto:ital,wght@1,100;1,300&family=Ubuntu:wght@700&display=swap"
             rel="stylesheet"
           />
         </Head>
