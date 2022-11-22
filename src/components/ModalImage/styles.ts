@@ -16,19 +16,24 @@ export const modalContent = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-width: 85%;
+width: 100%;
 height: 100%;
-margin: auto;
+margin: 0 auto;
 
 `
 export const close = styled.button`
 position: absolute;
-top: 15;
-right: 35;
-color: #f1f1f1;
+top: 27px;
+right: 34px;
+background-color: transparent;
 font-size: 40;
 font-weight: bold;
 cursor: pointer;
+
+`
+export const ImageModal = styled.img`
+width: auto;
+height: auto;
 
 `
 
