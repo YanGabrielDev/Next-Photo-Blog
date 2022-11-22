@@ -12,6 +12,9 @@ ${({ theme }: ThemeInterface) => css`
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
+  @media ${theme.media?.lteLarge}{
+      justify-content: center;
+    }
    }
  `}
 `
@@ -26,6 +29,7 @@ export const Container = styled.header`
    font-family: ${theme.fonts.family?.default};
    position: fixed;
    align-items: center;
+   
     }
   `}
 `
