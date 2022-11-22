@@ -83,7 +83,7 @@ export const LinkMenu = styled(Link)`
  ${({ theme }: ThemeInterface) => css`
    color: ${theme.colors?.gray};
    cursor: pointer;
-   
+   text-decoration: none;
    &:hover {
       color: ${theme.colors?.white};
     }
