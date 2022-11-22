@@ -11,7 +11,7 @@ background-color: rgba(0, 0, 0, 0.8);
 overflow: auto;
 
 `
-export const modalContent = styled.div`
+export const ModalContent = styled.div`
 
 display: flex;
 align-items: center;
@@ -21,7 +21,7 @@ height: 100%;
 margin: 0 auto;
 
 `
-export const close = styled.button`
+export const ModalButton = styled.button`
 position: absolute;
 top: 27px;
 right: 34px;
@@ -31,7 +31,7 @@ font-weight: bold;
 cursor: pointer;
 
 `
-export const ImageModal = styled.img`
+export const ModalImage = styled.img`
 width: auto;
 height: auto;
 

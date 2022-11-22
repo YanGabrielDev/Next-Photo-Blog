@@ -15,12 +15,12 @@ export const Thumbnail = ({ children, onOpen }: ModalInterface) => {
 export const ModalContent = ({ onClose, children, image }: ModalInterface) => {
   return (
     <Styled.Modal>
-      <Styled.close onClick={onClose}>
-        <Close/>
-      </Styled.close>
-      <Styled.modalContent>
-        <Styled.ImageModal src={image}/>
-      </Styled.modalContent>
+      <Styled.ModalButton onClick={onClose}>
+        <Close />
+      </Styled.ModalButton>
+      <Styled.ModalContent>
+        <Styled.ModalImage src={image} />
+      </Styled.ModalContent>
     </Styled.Modal>
   )
 }
