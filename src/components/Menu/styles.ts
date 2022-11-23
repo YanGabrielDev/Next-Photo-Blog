@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import { ThemeInterface } from "../../styles/theme/interface";
 import Link from "next/link";
-type OpenDrawer = {
+export interface OpenDrawer  {
   isOpen?: boolean;
 };
 
@@ -104,12 +104,12 @@ export const LinkMenu = styled(Link)`
 export const drawer = styled.nav<OpenDrawer>`
 ${({theme, isOpen}) => css`
 background-color: ${theme.colors.black};
-width: ${ isOpen ? "220px" : "50px"};
+width: ${ isOpen ? "220px" : "0px"};
 height: 100vh;
 position: fixed;
 overflow: hidden;
 top: 0;
 left: 0;
-transition: width 0.4s;
+transition: width 0.1s;
 `}
 `
