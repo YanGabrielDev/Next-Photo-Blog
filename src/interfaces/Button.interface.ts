@@ -5,6 +5,7 @@ export interface ButtonInterface{
   background?: string,
   color?: string,
   children: ReactNode | string,
-  border?: string
-  position?: string
+  border?: string,
+  position?: string,
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }

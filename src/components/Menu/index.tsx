@@ -8,6 +8,7 @@ import { Menu } from "@mui/icons-material"
 import { ModalButton } from "../ModalImage/styles"
 import { Button } from "../Button"
 export const HeaderMenu = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const matchesMin = useMediaQuery("(min-width:980px)")
   const matchesMax = useMediaQuery("(max-width:979px)")
   const router = useRouter()
@@ -41,13 +42,10 @@ export const HeaderMenu = () => {
               </Styled.LinkMenu>
             </Styled.MenuLink>
             <Styled.Social>
-              <a
-                href="https://www.linkedin.com/in/yan-gabriel-07ba581b4/"
-                target={"_blank"}
-              >
+              <a href="https://www.linkedin.com/in/yan-gabriel-07ba581b4/"  >
                 <LinkedinIcon height="30" width="30" />
               </a>
-              <a href="https://github.com/YanGabriel2022" target={"_blank"}>
+              <a href="https://github.com/YanGabriel2022" >
                 <GithubIcon height="30" width="30" />
               </a>
             </Styled.Social>
@@ -62,9 +60,16 @@ export const HeaderMenu = () => {
             fontSize="2rem"
             color="white"
             position="fixed"
+            onClick={() => setIsOpen(true)}
           >
             <Menu fontSize="large" />
           </Button>
+          {isOpen &&
+          <Styled.drawer isOpen={isOpen}>
+
+          </Styled.drawer>
+          
+          }
         </>
       )}
     </Styled.Container>

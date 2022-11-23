@@ -7,6 +7,7 @@ export const Button = ({
   children,
   border,
   position,
+  onClick,
 }: ButtonInterface) => {
   return (
     <Container
@@ -15,6 +16,7 @@ export const Button = ({
       fontSize={fontSize}
       border={border}
       position={position}
+      onClick={onClick}
     >
       {children}
     </Container>
