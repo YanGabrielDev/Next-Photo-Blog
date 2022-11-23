@@ -19,7 +19,6 @@ function MyHome() {
       )
       .then((resp) => setPhoto(resp.data.photos))
   }, [currentPage])
-  console.log(photo)
 
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
