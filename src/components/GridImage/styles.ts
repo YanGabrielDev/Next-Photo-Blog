@@ -31,8 +31,13 @@ export const Image = styled.img`
   ${({ theme }) => css`
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
     border-radius: 10px;
 
   `}
 `;
+
+export const ContentImage = styled.div`
+display: inline-block;
+padding-bottom: 16px;
+
+`
