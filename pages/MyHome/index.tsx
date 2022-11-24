@@ -4,7 +4,7 @@ import { Content } from "../../src/components/Content"
 import { GridImage } from "../../src/components/GridImage"
 function MyHome() {
   const [photo, setPhoto] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(20)
 
   useEffect(() => {
     axios
@@ -24,7 +24,7 @@ function MyHome() {
     const intersectionObserver = new IntersectionObserver((entries) => {
       if (entries.some((entry) => entry.isIntersecting)) {
         console.log("viu")
-        setCurrentPage((currentPageInside) => currentPageInside + 1)
+        setCurrentPage((currentPageInside) => currentPageInside + 20)
       }
     })
     intersectionObserver.observe(document.querySelector("#sentinela")!)
@@ -34,6 +34,7 @@ function MyHome() {
 
   return (
     <Content>
+
       <GridImage data={photo} />
       <li id="sentinela" className="sentinela" />
     </Content>
