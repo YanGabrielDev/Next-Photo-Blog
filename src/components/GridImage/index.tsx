@@ -36,10 +36,14 @@ export const GridImage = ({ data, image }: GridImageInterface) => {
       <Styled.Grid>
         {data?.map((image) => (
           
-          <div key={image.id}>
+          <Styled.ContentImage key={image.id}>
             <Image src={image.src.large} onClick={() => {setIsOpen(true), setState(image.src.large)}} />
-           
-          </div>
+           <div style={{
+            width: "100%",
+            height: "30px",
+            background: "red"
+           }}></div>
+          </Styled.ContentImage>
         ))}
         {/* {OpenImage(state)} */}
       </Styled.Grid>
