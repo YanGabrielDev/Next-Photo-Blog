@@ -30,11 +30,10 @@ function MyHome() {
     intersectionObserver.observe(document.querySelector("#sentinela")!)
     return () => intersectionObserver.disconnect()
   }, [])
-  console.log(currentPage)
+  console.log(photo)
 
   return (
     <Content>
-
       <GridImage data={photo} />
       <li id="sentinela" className="sentinela" />
     </Content>

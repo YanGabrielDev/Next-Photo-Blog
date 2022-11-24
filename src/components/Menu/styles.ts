@@ -32,6 +32,7 @@ export const Container = styled.header`
    font-family: ${theme.fonts.family?.default};
    position: fixed;
    align-items: center;
+   z-index: 1;
    
     }
   `}

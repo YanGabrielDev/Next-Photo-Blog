@@ -10,6 +10,9 @@ import { ThemeInterface } from "./theme/interface";
 body{
     background-color: ${({theme}: ThemeInterface) => theme.colors?.SoftBlack};
 }
+a{
+    text-decoration: none;
+}
 
 
  `

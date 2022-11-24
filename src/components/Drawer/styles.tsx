@@ -1,6 +1,7 @@
 import { SetStateAction } from "react"
 import styled, { css } from "styled-components"
 import { ThemeInterface } from "../../styles/theme/interface"
+import Link from "next/link"
 
 export interface DrawerInterface {
   isOpen?: boolean
@@ -51,5 +52,27 @@ export const Text = styled.h3`
   ${({ theme }: ThemeInterface) => css`
    font-size: ${theme.fonts.sizes?.xsmall};
     }
+  `}
+`
+export const Menu = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  `}
+`
+export const MenuLink = styled(Link)`
+  ${({ theme }: ThemeInterface) => css`
+    width: 100%;
+    height: 30px;
+    display: flex;
+    gap: 25px;
+    color: ${theme.colors?.white};
+    align-items: center;
+    letter-spacing: 2px;
+    padding: 3px 12px;
+    margin-top: 1rem;
+    text-decoration: none;
   `}
 `

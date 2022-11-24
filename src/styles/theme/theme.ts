@@ -1,3 +1,4 @@
+
 export const theme = {
     colors:{
         black: "#000205",
@@ -5,7 +6,8 @@ export const theme = {
         white: "#ffffff",
         blue: "#0564fc",
         ciano: "#05aefc",
-        gray: "#8c8c8c"
+        gray: "#8c8c8c",
+        opacityBlack: "rgba(0%, 0%, 0%, 40%)"
     },
     fonts: {
         family: {
@@ -26,6 +28,7 @@ export const theme = {
       media: {
         lteMedium: "(max-width: 760px)",
         lteLarge: "(max-width: 980px)",
+        // lteLarge: "(max-width: 980px)",
       },
       spacings: {
         xsmall: "1rem",

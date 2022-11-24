@@ -7,7 +7,7 @@ export const Container = styled.div`
 `
 export const Grid = styled.div`
   ${({ theme }: ThemeInterface) => css`
-    column-count: 4;
+    column-count: 5;
     column-gap: 10px;
 
     @media ${theme.media?.lteLarge}{
@@ -31,13 +31,44 @@ export const Image = styled.img`
   ${({ theme }) => css`
     width: 100%;
     height: auto;
-    border-radius: 10px;
 
   `}
 `;
 
 export const ContentImage = styled.div`
 display: inline-block;
-padding-bottom: 16px;
+position: relative;
+border-radius: 10px;
+margin: 8px;
+overflow: hidden;
+
+
+:hover{
+  >div{
+
+    display: flex;
+  }
+      
+    }
+ 
+`
+
+export const MenuContent = styled.div`
+${({theme}: ThemeInterface) => css`
+  width: 100%;
+  height: 2.4rem;
+  background-color: ${theme.colors?.opacityBlack};
+  color: ${theme.colors?.white};
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  position: absolute;
+  bottom: 0;
+  >a{
+  color: white
+}
+  
+`}
 
 `

@@ -6,7 +6,8 @@ export interface ThemeInterface{
           white?: string,       
           ciano?: string,       
           blue?: string,       
-          gray?: string,       
+          gray?: string,
+          opacityBlack?: string      
       }
     
       fonts: {
