@@ -63,13 +63,10 @@ export const HeaderMenu = () => {
               </Styled.LinkMenu>
             </Styled.MenuLink>
             <Styled.Social>
-              <a
-                href="https://www.linkedin.com/in/yan-gabriel-07ba581b4/"
-                target={"_blank"}
-              >
+              <a href="https://www.linkedin.com/in/yan-gabriel-07ba581b4/" target={"_blank"} rel="noreferrer" >
                 <LinkedinIcon height="30" width="30" />
               </a>
-              <a href="https://github.com/YanGabrielDev" target={"_blank"}>
+              <a href="https://github.com/YanGabrielDev" target={"_blank"} rel="noreferrer">
                 <GithubIcon height="30" width="30" />
               </a>
             </Styled.Social>
