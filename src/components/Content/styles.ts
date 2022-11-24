@@ -7,6 +7,7 @@ ${({theme}: ThemeInterface) => css`
  width: 100%;
  padding-top: 20rem;
  padding: 0 1rem;
+ padding-bottom: 5rem;
 
 
 `}
