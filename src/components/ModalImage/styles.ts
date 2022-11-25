@@ -28,6 +28,7 @@ right: 34px;
 background-color: transparent;
 font-size: 40;
 font-weight: bold;
+border: none;
 cursor: pointer;
 
 `
