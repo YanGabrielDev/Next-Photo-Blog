@@ -30,7 +30,6 @@ function MyHome() {
     intersectionObserver.observe(document.querySelector("#sentinela")!)
     return () => intersectionObserver.disconnect()
   }, [])
-  console.log(photo)
 
   return (
     <Content>
