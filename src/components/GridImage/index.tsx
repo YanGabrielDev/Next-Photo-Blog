@@ -25,13 +25,13 @@ export const GridImage = ({ data, image }: GridImageInterface) => {
               }}
             />
             <Styled.MenuContent>
-              <a href={image.photographer_url} target={"_blank"}>
+              <a href={image.photographer_url} target={"_blank"} rel="noreferrer">
                 <p>
                   By:
                   {image.photographer}
                 </p>
               </a>
-              <a href={image.url} target={"_blank"}>
+              <a href={image.url} target={"_blank"} rel="noreferrer">
                 <Download fontSize="large" />
               </a>
             </Styled.MenuContent>
