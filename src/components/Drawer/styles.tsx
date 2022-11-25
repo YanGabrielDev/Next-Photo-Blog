@@ -57,7 +57,7 @@ export const Text = styled.h3`
 export const Menu = styled.div`
   ${({ theme }) => css`
     width: 100%;
-    height: 100%;
+    height: 77%;
     display: flex;
     flex-direction: column;
   `}
@@ -75,4 +75,13 @@ export const MenuLink = styled(Link)`
     margin-top: 1rem;
     text-decoration: none;
   `}
+`
+
+export const Footer = styled.footer`
+${({theme}: ThemeInterface) =>css`
+height: 50px;
+width: 100%;
+display: flex;
+justify-content: space-around;
+`}
 `
