@@ -65,6 +65,9 @@ ${({theme}: ThemeInterface) => css`
   padding: 0 15px;
   position: absolute;
   bottom: 0;
+  @media ${theme.media?.lteLarge}{
+      display: flex;
+    }
   >a{
   color: white
 }
