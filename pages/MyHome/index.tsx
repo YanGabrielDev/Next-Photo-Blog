@@ -3,13 +3,13 @@ import { useEffect, useState } from "react"
 import { Content } from "../../src/components/Content"
 import { GridImage } from "../../src/components/GridImage"
 function MyHome() {
-  const [photo, setPhoto] = useState([])
-  const [currentPage, setCurrentPage] = useState(20)
+  const [photo, setPhoto] = useState<any>([])
+  const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     axios
       .get(
-        `https://api.pexels.com/v1/search/?page=2&per_page=${currentPage}&query=night`,
+        `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=10&query=ocean`,
         {
           headers: {
             Authorization:
@@ -17,14 +17,12 @@ function MyHome() {
           },
         }
       )
-      .then((resp) => setPhoto(resp.data.photos))
+      .then((resp) => setPhoto((prev:any) => [...prev, ...resp.data.photos]))
   }, [currentPage])
-
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
       if (entries.some((entry) => entry.isIntersecting)) {
-        console.log("viu")
-        setCurrentPage((currentPageInside) => currentPageInside + 20)
+        setCurrentPage((currentPageInside) => currentPageInside + 1)
       }
     })
     intersectionObserver.observe(document.querySelector("#sentinela")!)
@@ -34,7 +32,6 @@ function MyHome() {
   return (
     <Content>
       <GridImage data={photo} />
-      <li id="sentinela" className="sentinela" />
     </Content>
   )
 }
