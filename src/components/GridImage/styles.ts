@@ -7,7 +7,7 @@ export const Container = styled.div`
 `
 export const Grid = styled.div`
   ${({ theme }: ThemeInterface) => css`
-    column-count: 5;
+    column-count: 4;
     column-gap: 10px;
 
     @media ${theme.media?.lteLarge}{
