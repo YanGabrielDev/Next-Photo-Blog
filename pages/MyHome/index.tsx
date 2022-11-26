@@ -1,4 +1,5 @@
 import axios from "axios"
+import Head from "next/head"
 import { useEffect, useState } from "react"
 import { Content } from "../../src/components/Content"
 import { GridImage } from "../../src/components/GridImage"
@@ -30,9 +31,14 @@ function MyHome() {
   }, [])
 
   return (
+    <>
+    <Head>
+      <title>Home</title>
+    </Head>
     <Content>
       <GridImage data={photo} />
     </Content>
+    </>
   )
 }
 export default MyHome
