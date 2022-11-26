@@ -16,8 +16,8 @@ export const GridImage = ({ data, image }: GridImageInterface) => {
       )}
 
       <Styled.Grid>
-        {data?.map((image) => (
-          <Styled.ContentImage key={image.id}>
+        {data?.map((image, index) => (
+          <Styled.ContentImage key={index}>
             <Image
               src={image.src.large}
               onClick={() => {
@@ -37,6 +37,8 @@ export const GridImage = ({ data, image }: GridImageInterface) => {
             </Styled.MenuContent>
           </Styled.ContentImage>
         ))}
+              <li id="sentinela" className="sentinela" />
+
         {/* {OpenImage(state)} */}
       </Styled.Grid>
     </Styled.Container>
