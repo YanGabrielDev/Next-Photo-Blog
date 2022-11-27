@@ -4,6 +4,7 @@ import { GridImageInterface } from "../../interfaces/GridImage.interface"
 import { ModalContent } from "../ModalImage"
 import { useState } from "react"
 import { Download } from "@mui/icons-material"
+import { Search } from "../Search"
 
 export const GridImage = ({ data, image }: GridImageInterface) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -11,6 +12,7 @@ export const GridImage = ({ data, image }: GridImageInterface) => {
 
   return (
     <Styled.Container>
+      <Search/>
       {isOpen && (
         <ModalContent onClose={() => setIsOpen(false)} image={state} />
       )}
