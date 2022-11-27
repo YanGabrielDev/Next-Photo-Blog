@@ -3,6 +3,7 @@ import Head from "next/head"
 import { useEffect, useState } from "react"
 import { Content } from "../../src/components/Content"
 import { GridImage } from "../../src/components/GridImage"
+import { Search } from "../../src/components/Search"
 function MyHome() {
   const [photo, setPhoto] = useState<any>([])
   const [currentPage, setCurrentPage] = useState(1)
