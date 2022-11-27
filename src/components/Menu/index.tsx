@@ -63,6 +63,10 @@ export const HeaderMenu = () => {
               </Styled.LinkMenu>
             </Styled.MenuLink>
             <Styled.Social>
+              <div>
+                <input/>
+                <button>dkalkd</button>
+              </div>
               <a
                 href="https://www.linkedin.com/in/yan-gabriel-07ba581b4/"
                 target={"_blank"}
