@@ -7,8 +7,11 @@ interface Search {
 export const Search = ({search, searchChange, onSearch}: Search) => {
 return(
     <Styled.Form>
+        <form>
+
         <input onChange={searchChange} value={search} />
         <button onClick={onSearch}>Submit</button>
+        </form>
     </Styled.Form>
 )
 
