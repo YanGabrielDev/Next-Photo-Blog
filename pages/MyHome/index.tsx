@@ -7,11 +7,12 @@ import { Search } from "../../src/components/Search"
 function MyHome() {
   const [photo, setPhoto] = useState<any>([])
   const [currentPage, setCurrentPage] = useState(1)
+  const [state, setState] = useState<string>('ocean')
 
   useEffect(() => {
     axios
       .get(
-        `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=10&query=ocean`,
+        `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=10&query=${state}`,
         {
           headers: {
             Authorization:
@@ -20,7 +21,7 @@ function MyHome() {
         }
       )
       .then((resp) => setPhoto((prev:any) => [...prev, ...resp.data.photos]))
-  }, [currentPage])
+  }, [currentPage, state])
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
       if (entries.some((entry) => entry.isIntersecting)) {
@@ -30,6 +31,7 @@ function MyHome() {
     intersectionObserver.observe(document.querySelector("#sentinela")!)
     return () => intersectionObserver.disconnect()
   }, [])
+  console.log(state)
 
   return (
     <>
@@ -37,7 +39,7 @@ function MyHome() {
       <title>Home</title>
     </Head>
     <Content>
-      <GridImage data={photo} />
+      <GridImage data={photo} setState={setState}/>
     </Content>
     </>
   )
