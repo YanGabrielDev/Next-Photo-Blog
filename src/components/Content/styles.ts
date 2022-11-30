@@ -8,6 +8,7 @@ ${({theme}: ThemeInterface) => css`
  padding-top: 20rem;
  padding: 0 1rem;
  padding-bottom: 5rem;
+ 
 
 
 `}
