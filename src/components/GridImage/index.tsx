@@ -6,15 +6,23 @@ import { useState } from "react"
 import { Download } from "@mui/icons-material"
 import { Search } from "../Search"
 
-export const GridImage = ({ data, image }: GridImageInterface) => {
+export const GridImage = ({ data, setState }: GridImageInterface) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [state, setState] = useState<any>()
+  const [imageState, setImageState] = useState<string>('')
+  const [searchValue, setSearchvalue] = useState<string>('')
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+     setSearchvalue(event.target.value)
+  }
   return (
     <Styled.Container>
-      <Search/>
+        <Search  searchChange={handleChange} search={searchValue} onSearch={(e) => {
+          e.preventDefault()
+          setState(searchValue)
+          
+          }}/>
       {isOpen && (
-        <ModalContent onClose={() => setIsOpen(false)} image={state} />
+        <ModalContent onClose={() => setIsOpen(false)} image={imageState} />
       )}
 
       <Styled.Grid>
@@ -23,7 +31,7 @@ export const GridImage = ({ data, image }: GridImageInterface) => {
             <Image
               src={image.src.large}
               onClick={() => {
-                setIsOpen(true), setState(image.src.large)
+                setIsOpen(true), setImageState(image.src.large)
               }}
             />
             <Styled.MenuContent>
