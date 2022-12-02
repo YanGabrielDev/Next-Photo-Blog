@@ -31,7 +31,7 @@ function MyHome() {
     intersectionObserver.observe(document.querySelector("#sentinela")!)
     return () => intersectionObserver.disconnect()
   }, [])
-  console.log(state)
+  console.log(photo)
 
   return (
     <>
@@ -39,7 +39,7 @@ function MyHome() {
       <title>Home</title>
     </Head>
     <Content>
-      <GridImage data={photo} setState={setState}/>
+      <GridImage data={photo} setState={setState} setPhoto={setPhoto}/>
     </Content>
     </>
   )
