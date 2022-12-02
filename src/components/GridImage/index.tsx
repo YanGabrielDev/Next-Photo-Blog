@@ -2,11 +2,11 @@ import * as Styled from "./styles"
 import { Image } from "./styles"
 import { GridImageInterface } from "../../interfaces/GridImage.interface"
 import { ModalContent } from "../ModalImage"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Download } from "@mui/icons-material"
 import { Search } from "../Search"
 
-export const GridImage = ({ data, setState }: GridImageInterface) => {
+export const GridImage = ({ data, setState, setPhoto }: GridImageInterface) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [imageState, setImageState] = useState<string>('')
   const [searchValue, setSearchvalue] = useState<string>('')
@@ -14,6 +14,12 @@ export const GridImage = ({ data, setState }: GridImageInterface) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
      setSearchvalue(event.target.value)
   }
+
+  useEffect((
+    
+  )=>{
+    setPhoto((e:any) => e = [])
+  },[imageState])
   return (
     <Styled.Container>
         <Search  searchChange={handleChange} search={searchValue} onSearch={(e) => {
