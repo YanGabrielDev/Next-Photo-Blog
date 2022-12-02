@@ -3,7 +3,6 @@ import { ThemeInterface } from "../../styles/theme/interface"
 
 export const Container = styled.div`
   margin-bottom: 10rem;
-  padding-top: 20rem;
 `
 export const Grid = styled.div`
   ${({ theme }: ThemeInterface) => css`

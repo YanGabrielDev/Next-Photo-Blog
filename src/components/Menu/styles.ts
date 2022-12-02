@@ -30,9 +30,10 @@ export const Container = styled.header`
    display: flex;
    color: white;
    font-family: ${theme.fonts.family?.default};
-   position: fixed;
+   position: sticky;
    align-items: center;
    z-index: 1;
+   top: 0;
    
     }
   `}

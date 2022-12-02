@@ -6,27 +6,25 @@ import { useEffect, useState } from "react"
 import { Download } from "@mui/icons-material"
 import { Search } from "../Search"
 
-export const GridImage = ({ data, setState, setPhoto }: GridImageInterface) => {
+export const GridImage = ({ data, setState }: GridImageInterface) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [imageState, setImageState] = useState<string>('')
-  const [searchValue, setSearchvalue] = useState<string>('')
+  const [imageState, setImageState] = useState<string>("")
+  const [searchValue, setSearchvalue] = useState<string>("")
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-     setSearchvalue(event.target.value)
+    setSearchvalue(event.target.value)
   }
 
-  useEffect((
-    
-  )=>{
-    setPhoto((e:any) => e = [])
-  },[imageState])
   return (
     <Styled.Container>
-        <Search  searchChange={handleChange} search={searchValue} onSearch={(e) => {
+      <Search
+        searchChange={handleChange}
+        search={searchValue}
+        onSearch={(e) => {
           e.preventDefault()
           setState(searchValue)
-          
-          }}/>
+        }}
+      />
       {isOpen && (
         <ModalContent onClose={() => setIsOpen(false)} image={imageState} />
       )}
@@ -41,7 +39,11 @@ export const GridImage = ({ data, setState, setPhoto }: GridImageInterface) => {
               }}
             />
             <Styled.MenuContent>
-              <a href={image.photographer_url} target={"_blank"} rel="noreferrer">
+              <a
+                href={image.photographer_url}
+                target={"_blank"}
+                rel="noreferrer"
+              >
                 <p>
                   By:
                   {image.photographer}
@@ -53,7 +55,7 @@ export const GridImage = ({ data, setState, setPhoto }: GridImageInterface) => {
             </Styled.MenuContent>
           </Styled.ContentImage>
         ))}
-              <li id="sentinela" className="sentinela" />
+        <li id="sentinela" className="sentinela" />
 
         {/* {OpenImage(state)} */}
       </Styled.Grid>

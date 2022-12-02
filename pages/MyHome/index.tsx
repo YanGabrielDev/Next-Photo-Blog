@@ -7,7 +7,7 @@ import { Search } from "../../src/components/Search"
 function MyHome() {
   const [photo, setPhoto] = useState<any>([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [state, setState] = useState<string>('ocean')
+  const [state, setState] = useState<string>("ocean")
 
   useEffect(() => {
     axios
@@ -20,7 +20,7 @@ function MyHome() {
           },
         }
       )
-      .then((resp) => setPhoto((prev:any) => [...prev, ...resp.data.photos]))
+      .then((resp) => setPhoto((prev: []) => [...prev, ...resp.data.photos]))
   }, [currentPage, state])
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
@@ -31,16 +31,21 @@ function MyHome() {
     intersectionObserver.observe(document.querySelector("#sentinela")!)
     return () => intersectionObserver.disconnect()
   }, [])
-  console.log(photo)
 
   return (
     <>
-    <Head>
-      <title>Home</title>
-    </Head>
-    <Content>
-      <GridImage data={photo} setState={setState} setPhoto={setPhoto}/>
-    </Content>
+      <Head>
+        <title>Home</title>
+      </Head>
+      <Content>
+        <button>uepa</button>
+        <GridImage
+          data={photo}
+          setState={setState}
+          setPhoto={setPhoto}
+          photo={photo}
+        />
+      </Content>
     </>
   )
 }

@@ -4,9 +4,11 @@ import { Footer } from "../Footer"
 export const Layout = ({ children }: AuxProps) => {
   return (
     <>
-      <HeaderMenu />
-      {children}
-      <Footer />
+      <div>
+        <HeaderMenu />
+        {children}
+        <Footer />
+      </div>
     </>
   )
 }
