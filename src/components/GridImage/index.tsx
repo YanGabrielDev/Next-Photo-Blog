@@ -2,37 +2,25 @@ import * as Styled from "./styles"
 import { Image } from "./styles"
 import { GridImageInterface } from "../../interfaces/GridImage.interface"
 import { ModalContent } from "../ModalImage"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Download } from "@mui/icons-material"
-import { Search } from "../Search"
+import { PhotoInterface } from "../../interfaces/PhotoInterface"
 
-export const GridImage = ({ data, setState }: GridImageInterface) => {
+export const GridImage = ({ data }: GridImageInterface) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [imageState, setImageState] = useState<string>("")
-  const [searchValue, setSearchvalue] = useState<string>("")
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchvalue(event.target.value)
-  }
 
   return (
     <Styled.Container>
-      <Search
-        searchChange={handleChange}
-        search={searchValue}
-        onSearch={(e) => {
-          e.preventDefault()
-          setState(searchValue)
-        }}
-      />
       {isOpen && (
         <ModalContent onClose={() => setIsOpen(false)} image={imageState} />
       )}
 
       <Styled.Grid>
-        {data?.map((image, index) => (
+        {data.map((image, index) => (
           <Styled.ContentImage key={index}>
             <Image
+              alt={image.alt}
               src={image.src.large}
               onClick={() => {
                 setIsOpen(true), setImageState(image.src.large)
@@ -57,7 +45,6 @@ export const GridImage = ({ data, setState }: GridImageInterface) => {
         ))}
         <li id="sentinela" className="sentinela" />
 
-        {/* {OpenImage(state)} */}
       </Styled.Grid>
     </Styled.Container>
   )
