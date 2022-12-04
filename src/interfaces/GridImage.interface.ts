@@ -1,8 +1,13 @@
-export interface GridImageInterface{
-    data: Array<any>;
-    image?: string
-    setState: any;
-    setPhoto: any;
-    photo: string
+export interface GridImageInterface {
+  data: {
+    alt: string
+    photographer_url: string
+    photographer: string
+    url: string
+    src: {
+      large: string
+    }
 
+    index: number
+  }[]
 }
