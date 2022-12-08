@@ -9,14 +9,14 @@ function MyHome() {
   const [photo, setPhoto] = useState<Array<PhotoInterface>>([])
   const [currentPage, setCurrentPage] = useState(1)
   const [search, setSearch] = useState<string>("ocean")
+  const Key = process.env.NEXT_PUBLIC_PEXELS_KEY
   const getPhoto = () => {
     const res = axios
       .get(
-        `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=10&query=${search}`,
+        `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=30&query=${search}`,
         {
           headers: {
-            Authorization:
-              "563492ad6f917000010000017cc53e814cb84a32809bee6cbd3f58ff",
+            Authorization: Key
           },
         }
       )
@@ -64,7 +64,9 @@ function MyHome() {
           }}
         />
         <GridImage data={photo}/>
+      <li id="sentinela" className="sentinela" />
       </Content>
+
     </>
   )
 }
