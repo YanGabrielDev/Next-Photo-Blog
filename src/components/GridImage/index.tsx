@@ -4,11 +4,11 @@ import { GridImageInterface } from "../../interfaces/GridImage.interface"
 import { ModalContent } from "../ModalImage"
 import { useState } from "react"
 import { Download } from "@mui/icons-material"
-import { PhotoInterface } from "../../interfaces/PhotoInterface"
 
 export const GridImage = ({ data }: GridImageInterface) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [imageState, setImageState] = useState<string>("")
+
 
   return (
     <Styled.Container>
@@ -26,6 +26,7 @@ export const GridImage = ({ data }: GridImageInterface) => {
                 setIsOpen(true), setImageState(image.src.large)
               }}
             />
+      
             <Styled.MenuContent>
               <a
                 href={image.photographer_url}
@@ -42,9 +43,8 @@ export const GridImage = ({ data }: GridImageInterface) => {
               </a>
             </Styled.MenuContent>
           </Styled.ContentImage>
+          
         ))}
-        <li id="sentinela" className="sentinela" />
-
       </Styled.Grid>
     </Styled.Container>
   )
