@@ -12,7 +12,7 @@ return(
         <Styled.ContentForm>
         <Styled.Form onSubmit={onSearch}>
         <Styled.Button><SearchIcon/></Styled.Button>
-        <Styled.Input onChange={searchChange} value={search} />
+        <Styled.Input onChange={searchChange} value={search} type='text' placeholder='Pesquisar...'/>
         </Styled.Form>
         </Styled.ContentForm>
     </Styled.Container>
