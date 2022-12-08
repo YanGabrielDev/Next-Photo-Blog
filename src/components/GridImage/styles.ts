@@ -6,8 +6,12 @@ export const Container = styled.div`
 `
 export const Grid = styled.div`
   ${({ theme }: ThemeInterface) => css`
-    column-count: 4;
+    column-count: 3; 
     column-gap: 10px;
+    /* display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(auto-fill, 620px); */
+}
 
     @media ${theme.media?.lteLarge}{
       column-count: 3;
@@ -30,7 +34,7 @@ export const Image = styled.img`
   ${({ theme }) => css`
     width: 100%;
     height: auto;
-
+    display: block;
   `}
 `;
 
@@ -40,16 +44,13 @@ position: relative;
 border-radius: 10px;
 margin: 8px;
 overflow: hidden;
-
+height: fit-content;
 
 :hover{
   >div{
-
     display: flex;
-  }
-      
+  }   
     }
- 
 `
 
 export const MenuContent = styled.div`
