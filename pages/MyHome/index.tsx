@@ -4,30 +4,39 @@ import { useEffect, useState } from "react"
 import { Content } from "../../src/components/Content"
 import { GridImage } from "../../src/components/GridImage"
 import { Search } from "../../src/components/Search"
-import {PhotoInterface} from '../../src/interfaces/PhotoInterface'
+import { PhotoInterface } from "../../src/interfaces/PhotoInterface"
+import { Loader } from "../../src/components/Loader"
+import { appStates } from "../../src/trataments/appStates"
+
 function MyHome() {
   const [photo, setPhoto] = useState<Array<PhotoInterface>>([])
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState<number>(1)
   const [search, setSearch] = useState<string>("ocean")
   const Key = process.env.NEXT_PUBLIC_PEXELS_KEY
-  const getPhoto = () => {
+
+  const getPhoto =  () => {
     const res = axios
       .get(
         `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=30&query=${search}`,
         {
           headers: {
-            Authorization: Key
+            Authorization: Key,
           },
         }
       )
-      .then((resp) => setPhoto((prev) => [...prev, ...resp.data.photos]))
+      .then((resp) => {
+        setPhoto((prev) => [...prev, ...resp.data.photos])
+      })
     return res
   }
 
   useEffect(() => {
-    getPhoto()
+    try {
+      getPhoto()
+    } catch {
+      console.error("falhou")
+    }
   }, [currentPage])
-
 
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
@@ -47,7 +56,6 @@ function MyHome() {
     await setPhoto([])
     await getPhoto()
   }
-  console.log(photo)
 
   return (
     <>
@@ -63,10 +71,9 @@ function MyHome() {
             handleSubimit()
           }}
         />
-        <GridImage data={photo}/>
-      <li id="sentinela" className="sentinela" />
+        <GridImage data={photo} />
+        <li id="sentinela" className="sentinela" />
       </Content>
-
     </>
   )
 }
