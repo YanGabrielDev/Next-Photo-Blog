@@ -26,7 +26,7 @@ export const Container = styled.header`
  ${({ theme }: ThemeInterface) => css`
    width: 100%;
    background-color: ${theme.colors?.black};
-   height: 8rem;
+   height: 6rem;
    display: flex;
    color: white;
    font-family: ${theme.fonts.family?.default};
