@@ -7,14 +7,11 @@ export const Container = styled.div`
 export const Grid = styled.div`
   ${({ theme }: ThemeInterface) => css`
     column-count: 3; 
-    column-gap: 10px;
-    /* display: grid;
-    grid-template-columns: repeat(3,auto);
-    grid-template-rows: repeat(auto-fill, 620px); */
+    column-gap: 5px;
 }
 
     @media ${theme.media?.lteLarge}{
-      column-count: 3;
+    column-count: 3;
     column-gap: 10px;
     }
     @media ${theme.media?.lteMedium}{
@@ -35,6 +32,7 @@ export const Image = styled.img`
     width: 100%;
     height: auto;
     display: block;
+   
   `}
 `;
 
@@ -45,6 +43,7 @@ border-radius: 10px;
 margin: 8px;
 overflow: hidden;
 height: fit-content;
+margin-bottom: 10px;
 
 :hover{
   >div{
